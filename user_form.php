@@ -1,12 +1,12 @@
 <?php
-$heading = "Form Validation in PHP";
+$heading = "login";
 
         $nameError          = "";
         $passwordError      = "";
             if(isset($_POST['submit'])) {
-                // echo "Your User Name is:" . $_POST['username'];
-                // echo "</br>";
-                // echo "Your Password is:" . $_POST['password'];
+                echo "Your User Name is:" . $_POST['username'];
+                echo "</br>";
+                echo "Your Password is:" . $_POST['password'];
 
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -48,39 +48,48 @@ $heading = "Form Validation in PHP";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User login form Validation</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="container">
-        <div class="row">
-            <div class = "col-sm-3 bg-gray"></div>
-            <div class = "col-md-6 bg-dark">
-            <div class="form-group text-white"><span><h1 class="text-center"><?=$heading;?></h1> </span></div>
-                <form class=" bg-success" action="user_form.php" method="POST"> 
-                   <!-- form.php -->
-                    <fieldset class="bg-light m-3" >
-                    <div class="row mb-3">
-                        <!-- <i class="fas fa-user"></i> -->
-                        <label for="username" class="form-label">User Name:</label>
-                        <input type="text" class="form-control-lg" id="exampleFormControlInput1" placeholder="Enter Your User Name" name="username" size="20" required><br>
-                        <span style="color: red;" ><?php echo $nameError;?></span>
-                    </div>
-                    
-                    <div class="row mb-3">
-                        <!-- <i class="fas fa-lock"></i> -->
-                        <label for="password" class="form-label">Password:</label>
-                        <input type="text" class="form-control-lg" id="exampleFormControlInput1" placeholder="Enter Your password" name="password" size="50" required><br>
-                        <span style="color: red;" ><?php echo $passwordError;?></span>
+   
+    <div class="container-fluid" >
+    <form action="user_form.php" method="POST" class="mx-auto">
+        <div><span><h1 class="text-center"><?=$heading;?></h1> </span></div>
+        <div class="mb-3 mt-3">
+            <label for="username" class="form-label">User Name</label>
+            <input type="text" name="username" class="form-control" id="exampleFormControlInput1" 
+                   placeholder="Enter Your User Name" name="username" size="20" required>
+                   <div><span class="text-danger"><?php echo $nameError?></span></div>
+            
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                   placeholder="Enter Your Password" size="20" required>
+                   <div><span class="text-danger"><?php echo $passwordError?></span></div>
 
-                    </div>
-                    </fieldset> 
+        </div>
+        
+        <button type="submit" name="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
 
-                    <fieldset class="center">
-                        <input type="submit" value="Login" name= "submit">
-                    </fieldset>
-            </div>
-            <div class = "col-sm-3 bg-gray" ></div>
-                </div>
-            </div>
-
+    </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            
 </body>
 </html>
+
+
+<!-- <div class="container-fluid"> 
+<form class="mx-auto">
+<h4 class="text-center"></h4
+<div class="mb-3 mt-5">
+</div>
+<div class="mb-3">
+<label for="exampleInputPassword1" class="form-label">Password</label> <input type="password" class="form-control" id="exampleInputPassword1">
+<div id="emailHelp" class="form-text">Forget password?</div>
+</div>
+<button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div> -->
