@@ -56,7 +56,19 @@
         // echo 'Host:' .$url['host']. "\n";
 
     
-
+     //PHP Math Exercises: Find the maximum and minimum marks 
+    //  from the specified set of arrays
+    
+        $banglaMarks = array(350,360,325,365,3263,245);
+        $englishMarks = array(375,368,325,369,329,245);
+        $mathMarks = array(355,354,387,332,3263,245);
+        $max_marks = max(max($banglaMarks), max($englishMarks), max($mathMarks));
+        $min_marks = min(min($banglaMarks), min($englishMarks), min($mathMarks));
+        
+        echo "Maximum Marks:" .$max_marks; 
+        echo "Minimum Marks:" .$min_marks;
+        
+ 
         
 
 
