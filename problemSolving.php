@@ -55,15 +55,9 @@
         // $url = parse_url($url);
         // echo 'Host:' .$url['host']. "\n";
 
-        // How to Change color of first character of a word in PHP
-        // $text = 'T3so Tutorial';
-        // $text = preg_replace('/(\b[a-z])/i',);
-        $text = "hello world";
-            $text = preg_replace_callback('/\b([a-z])/i', function($matches) {
-                return strtoupper($matches[1]);
-            }, $text);
+    
 
-            echo $text; // Outputs: Hello World
+        
 
 
     ?>
